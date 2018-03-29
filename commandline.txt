@@ -1,0 +1,8 @@
+git add --all >> indexer
+
+git commit -m "" >> mettre un message
+
+git push origin master >> push
+
+--------------------------------
+git pull >> recuperer un travail 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/Widget.ScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundwo"
+    android:orientation="vertical"
+    android:scrollbarStyle="insideOverlay">
+
+    <LinearLayout
+        android:id="@+id/linearPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Règlements du jeu"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vous commencerez avec 3 survivants de base. Vous commencerez en l'an 2050, vous devrez faire avancer votre communauté le plus loin possible dans les années. Plus les années avanceront, plus de survivant vous aurez, plus la consommation de ressources augmentera ainsi que la difficulté de combat envers les monstres. Il sera important de maintenir la barre de protection au dessus du seuil minimum sinon vous courrez le risque de perdre le contrôle de votre abri."
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/btnRessources"
+                android:onClick="afficherRessources"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Commencez!" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
