@@ -1,16 +1,17 @@
 package com.example.dugfr1431789.bunker;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void afficherRules(View btnEntrez){
-        startActivity(new Intent(MainActivity.this, Regles.class));
+        EditText txtBunker = (EditText)findViewById(R.id.bunkerName);
+        String nomBunker = txtBunker.getText().toString();
+        Intent intent = new Intent(this, Ressources.class);
+        intent.putExtra("nomBunker", nomBunker);
+        startActivity(intent);
     }
-
-    //1. diviser nbre ress actuelle avec le total.
-
-    //<progressbar
-
 }
+
+//ajout dun bouton menu
+//commencement de la bd
+//thread ressources

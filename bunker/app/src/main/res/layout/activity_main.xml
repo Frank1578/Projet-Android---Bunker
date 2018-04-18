@@ -17,12 +17,12 @@
         android:paddingRight="50dp">
 
         <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="59dp"-->
-            <!--android:text="BunkerBanniere"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="30sp"-->
-            <!--android:gravity="center"/>-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="59dp"-->
+        <!--android:text="BunkerBanniere"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="30sp"-->
+        <!--android:gravity="center"/>-->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
@@ -39,34 +39,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
+                android:gravity="center"
                 android:text="Nommez votre bunker:"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/bunkerName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Nom du bunker"
-                />
+                android:hint="Nom du bunker" />
 
             <ImageView
                 android:id="@+id/picNuclear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
                 android:adjustViewBounds="true"
                 android:maxHeight="100dp"
                 android:maxWidth="100dp"
-                android:src="@drawable/nuclear"
-                android:layout_marginTop="100dp"/>
+                android:src="@drawable/nuclear" />
 
             <Button
                 android:id="@+id/btnEntrez"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_marginTop="50dp"
-                android:text="entrez"
-                android:onClick="afficherRules"/>
+                android:onClick="afficherRules"
+                android:text="entrez" />
 
         </LinearLayout>
 

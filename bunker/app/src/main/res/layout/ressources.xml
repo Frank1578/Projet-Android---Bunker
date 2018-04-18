@@ -26,17 +26,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TableRow android:layout_marginTop="60dp">
+            <TableRow
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="60dp">
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="Eau"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+                <!--<TextView-->
+                <!--android:id="@+id/textView1"-->
+                <!--android:layout_width="120dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="40dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:text="Eau"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/eau" />
 
                 <LinearLayout
                     android:layout_width="150dp"
@@ -46,7 +57,7 @@
 
                     <LinearLayout
                         android:id="@+id/linearEau"
-                        android:layout_width="60dp"
+                        android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@color/blueWater"
                         android:orientation="vertical"></LinearLayout>
@@ -61,26 +72,35 @@
 
             </TableRow>
 
-            <TableRow>
+            <TableRow android:layout_marginBottom="10dp">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="Électricité"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+                <!--<TextView-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:layout_width="120dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="40dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:text="Électricité"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/eclair" />
 
                 <LinearLayout
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="30dp"
                     android:background="@color/white">
 
                     <LinearLayout
                         android:id="@+id/linearElectricite"
-                        android:layout_width="80dp"
+                        android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@color/yellow"
                         android:orientation="vertical"></LinearLayout>
@@ -97,23 +117,32 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="Nourriture"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+                <!--<TextView-->
+                <!--android:id="@+id/textView3"-->
+                <!--android:layout_width="120dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:text="Nourriture"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/jambon" />
 
                 <LinearLayout
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="30dp"
                     android:background="@color/white">
 
                     <LinearLayout
                         android:id="@+id/linearNourriture"
-                        android:layout_width="70dp"
+                        android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@color/green"
                         android:orientation="vertical"></LinearLayout>
@@ -121,7 +150,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/pourcentNourri"
+                    android:id="@+id/pourcentNourr"
                     android:text="100 %"
                     android:textColor="@color/white"
                     android:textSize="25dp" />
@@ -136,16 +165,17 @@
         android:id="@+id/button"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:text="Accèder aux activités"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:onClick="afficherActivites"
+        android:text="Accèder aux activités" />
 
     <TextView
         android:id="@+id/nomBunker"
         android:layout_width="200dp"
         android:layout_height="30dp"
+        android:layout_marginTop="80dp"
         android:text="Nom du bunker"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        android:layout_marginTop="80dp"/>
+        android:textSize="20dp" />
 
 </LinearLayout>

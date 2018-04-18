@@ -18,22 +18,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="140dp"
         android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp">
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:text="Eau"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+                <!--<TextView-->
+                <!--android:id="@+id/textView1"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Eau"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/eau" />
 
                 <LinearLayout
                     android:layout_width="150dp"
@@ -42,27 +52,37 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/linearEau"
-                        android:layout_width="30dp"
+                        android:id="@+id/linearEauAct"
+                        android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@color/blueWater"
-                        android:orientation="vertical">
-                    </LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
 
                 </LinearLayout>
 
             </TableRow>
 
             <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="5dp">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:text="Electricité"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+                <!--<TextView-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:layout_width="110dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Electricité"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="2dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/eclair" />
 
                 <LinearLayout
                     android:layout_width="150dp"
@@ -71,94 +91,104 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/linearElectricite"
-                        android:layout_width="30dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/yellow"
-                        android:orientation="vertical">
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="5dp">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="112dp"
-                    android:layout_height="wrap_content"
-                    android:text="Nourriture"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
-
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="30dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/linearNourriture"
-                        android:layout_width="30dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/green"
-                        android:orientation="vertical">
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="5dp">
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="115dp"
-                    android:layout_height="wrap_content"
-                    android:text="Protection"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
-
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="30dp"
-                    android:background="@color/white"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/linearProtectionRed"
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/red"
-                        android:orientation="horizontal">
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearProtectionYellow"
+                        android:id="@+id/linearElectriciteAct"
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@color/yellow"
-                        android:orientation="horizontal">
-                    </LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView3"-->
+                <!--android:layout_width="112dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Nourriture"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="10dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/jambon" />
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/linearProtectionGreen"
-                        android:layout_width="80dp"
+                        android:id="@+id/linearNourritureAct"
+                        android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@color/green"
-                        android:orientation="horizontal">
-                    </LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView4"-->
+                <!--android:layout_width="115dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Protection"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="25dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="2dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/bouclier" />
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/backgroundprotection"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/linearProtectionBlack"
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="5dp"
+                        android:layout_height="15dp"
                         android:background="@color/black"
-                        android:orientation="vertical">
-                    </LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/linearProtectionRed"-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@color/red"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/linearProtectionYellow"-->
+                    <!--android:layout_width="50dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@color/yellow"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/linearProtectionGreen"-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@color/green"-->
+                    <!--android:orientation="horizontal"></LinearLayout>-->
 
                 </LinearLayout>
 
@@ -171,52 +201,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="0dp">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp">
 
             <Button
                 android:id="@+id/btnAqueduc"
-                android:text="Travailler à l'aqueduc"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/btnaqueduc"
+                android:text="Travailler à l'aqueduc"
                 android:textColor="@color/black"/>
 
             <Button
                 android:id="@+id/btnGeneratrice"
-                android:text="S'occuper de la génératrice"
-                android:background="@drawable/btngeneratrice"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/black"/>
+                android:background="@drawable/btngeneratrice"
+                android:text="S'occuper de la génératrice"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btnNourriture"
-                android:text="S'occuper du jardin"
-                android:background="@drawable/btnjardin"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/black"/>
+                android:background="@drawable/btnjardin"
+                android:text="S'occuper du jardin"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btnSupervision"
-                android:text="Supervision de l'abri"
-                android:background="@drawable/btnsupervision"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/black"/>
+                android:background="@drawable/btnsupervision"
+                android:text="Supervision de l'abri"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btnRavitaillement"
-                android:text="Partir en ravitaillement"
-                android:background="@drawable/btnravitaillement"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/black"/>
+                android:background="@drawable/btnravitaillement"
+                android:text="Partir en ravitaillement"
+                android:textColor="@color/black" />
 
         </TableLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:onClick="afficherRessourcesinactivites"
+        android:text="retour" />
 
 </LinearLayout>
