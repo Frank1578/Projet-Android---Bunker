@@ -7,19 +7,34 @@
     android:background="@drawable/backgroundwo"
     android:weightSum="1">
 
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Gestion des ressources"
-        android:textSize="30dp"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="Ressources"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_marginLeft="60dp"/>
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/dot"
+            android:onClick="showPopup"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="283dp"
+        android:layout_height="200dp"
         android:orientation="vertical">
 
         <TableLayout
@@ -28,17 +43,7 @@
 
             <TableRow
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="60dp">
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView1"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginBottom="40dp"-->
-                <!--android:layout_marginLeft="20dp"-->
-                <!--android:text="Eau"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textSize="25dp" />-->
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imageView1"
@@ -74,16 +79,6 @@
 
             <TableRow android:layout_marginBottom="10dp">
 
-                <!--<TextView-->
-                <!--android:id="@+id/textView2"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginBottom="40dp"-->
-                <!--android:layout_marginLeft="20dp"-->
-                <!--android:text="Électricité"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textSize="25dp" />-->
-
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="30dp"
@@ -116,15 +111,6 @@
             </TableRow>
 
             <TableRow>
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView3"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="20dp"-->
-                <!--android:text="Nourriture"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textSize="25dp" />-->
 
                 <ImageView
                     android:id="@+id/imageView3"
@@ -161,21 +147,35 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:onClick="afficherActivites"
-        android:text="Accèder aux activités" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/nomBunker"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="80dp"
-        android:text="Nom du bunker"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/nomBunker"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:text="Nom du bunker"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/labelSurv"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:text="survivant"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/nbreSurvivant"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:text="survivant"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </LinearLayout>
 
 </LinearLayout>
