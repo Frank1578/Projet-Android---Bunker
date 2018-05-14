@@ -33,7 +33,16 @@
         </activity>
         <activity
             android:name=".activites"
-            android:parentActivityName=".Ressources"
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Ressources">
+            </meta-data>
+        </activity>
+        <activity
+            android:name=".Survivants"
+            android:parentActivityName=".MainActivity"
             android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

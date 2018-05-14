@@ -3,6 +3,7 @@ package com.example.dugfr1431789.bunker;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import java.text.NumberFormat;
 public class Ressources extends Activity {
 //    private static final int REQUEST_CODE = 1;
     Context context = this;
+    Survivants surv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -40,14 +42,21 @@ public class Ressources extends Activity {
         viewNomBunker.setText(nomBunker);
         viewSurvivant.setText(nbreSurvivant);
         affichageRessources();
+        changeTextTauxProtec();
     }
 
     public void affichageRessources(){
         int getEau, getElect, getNourr;
 
+        TextView txtEau = (TextView) findViewById(R.id.numEau);
+        TextView txtElect = (TextView) findViewById(R.id.numElect);
+        TextView txtNourr = (TextView) findViewById(R.id.numNourr);
         getEau = DataBaseHelper.getInstance(context).selectIdEau();
         getElect = DataBaseHelper.getInstance(context).selectIdElect();
         getNourr = DataBaseHelper.getInstance(context).selectIdNourr();
+        txtEau.setText(String.valueOf(getEau) + "/450");
+        txtElect.setText(String.valueOf(getElect) + "/450");
+        txtNourr.setText(String.valueOf(getNourr) + "/450");
         String eauPourc = String.valueOf((int)(getEau/450.0*100));
         String electPourc = String.valueOf((int)(getElect/450.0*100));
         String nourrPourc= String.valueOf((int)(getNourr/450.0*100));
@@ -130,6 +139,24 @@ public class Ressources extends Activity {
         txtNourrPourcent.setText(nourr + '%');
     }
 
+    public void changeTextTauxProtec(){
+        int tauxProtec = DataBaseHelper.getInstance(context).selectIdBarre();
+        TextView txtProtect = (TextView) findViewById(R.id.tauxProtection);
+
+        if(tauxProtec >= 0 && tauxProtec <= 50){
+            txtProtect.setText("Faible");
+            txtProtect.setTextColor(Color.RED);
+        }
+        else if(tauxProtec >= 50 && tauxProtec <=200){
+            txtProtect.setText("Modéré");
+            txtProtect.setTextColor(Color.YELLOW);
+        }
+        else if(tauxProtec > 200){
+            txtProtect.setText("Élevé");
+            txtProtect.setTextColor(Color.GREEN);
+        }
+    }
+
     public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         MenuInflater inflater = popup.getMenuInflater();
@@ -153,6 +180,14 @@ public class Ressources extends Activity {
                 Intent intent2 = new Intent(this, MainActivity.class);
                 startActivity(intent2);
                 return  true;
+            case R.id.Regles:
+                Intent intent3 = new Intent(this, Regles.class);
+                startActivity(intent3);
+                return true;
+            case R.id.Survivants:
+                Intent intent4 = new Intent(this, Survivants.class);
+                startActivity(intent4);
+                return true;
             default:
                 return false;
         }

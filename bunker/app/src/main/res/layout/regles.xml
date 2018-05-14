@@ -13,13 +13,26 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Règlements du jeu"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Règlements du jeu"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <Button
+                android:id="@+id/btnMenu"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/iconmenu"
+                android:onClick="showPopup"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,13 +46,6 @@
                 android:text="Vous commencerez avec 3 survivants de base. Vous commencerez en l'an 2050, vous devrez faire avancer votre communauté le plus loin possible dans les années. Plus les années avanceront, plus de survivant vous aurez, plus la consommation de ressources augmentera ainsi que la difficulté de combat envers les monstres. Il sera important de maintenir la barre de protection au dessus du seuil minimum sinon vous courrez le risque de perdre le contrôle de votre abri."
                 android:textColor="@color/white"
                 android:textSize="25dp" />
-
-            <Button
-                android:id="@+id/btnRessources"
-                android:onClick="afficherRessources"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Commencez!" />
 
         </LinearLayout>
 

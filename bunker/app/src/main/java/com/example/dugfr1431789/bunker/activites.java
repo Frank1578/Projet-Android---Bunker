@@ -166,6 +166,7 @@ public class activites extends Activity {
                 int numberRandom = rndMsg.nextInt(7);
                 int numberRandomRessource = rndNumber.nextInt(30);
                 int numberEvent = rndEvent.nextInt(5);
+                Survivants survivor = new Survivants();
 
                 LinearLayout widthEau = (LinearLayout) findViewById(R.id.linearEauAct);
                 LinearLayout widthElect = (LinearLayout) findViewById(R.id.linearElectriciteAct);
@@ -262,6 +263,7 @@ public class activites extends Activity {
                         }
                         else {
                             survivant -= 1;
+                            survivor.supprimerSurvivant();
                             paramsProtection.setMargins(cptBarre -= 5, 0, 0, 0);
                             barreProtection.setLayoutParams(paramsProtection);
                             DataBaseHelper.getInstance(context).insertInfo(String.valueOf(survivant));
@@ -271,9 +273,12 @@ public class activites extends Activity {
                         }
                         break;
                     case 6:
-                        survivant += 5;
+                        for(int i =0; i < 3; i++){
+                            survivor.genererUnSurvivant();
+                        }
+                        survivant += 3;
                         DataBaseHelper.getInstance(context).insertInfo(String.valueOf(survivant));
-                        msg = "Des survivants fût trouver au cours d'une recherche à l'extérieur. +5 survivants.";
+                        msg = "Des survivants fût trouver au cours d'une recherche à l'extérieur. +3 survivants.";
                         Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
                 }
             }
@@ -372,6 +377,14 @@ public class activites extends Activity {
                 Intent intent2 = new Intent(this, MainActivity.class);
                 startActivity(intent2);
                 return  true;
+            case R.id.Regles:
+                Intent intent3 = new Intent(this, Regles.class);
+                startActivity(intent3);
+                return true;
+            case R.id.Survivants:
+                Intent intent4 = new Intent(this, Survivants.class);
+                startActivity(intent4);
+                return true;
             default:
                 return false;
         }

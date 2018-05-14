@@ -24,9 +24,9 @@
         <Button
             android:id="@+id/btnMenu"
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/dot"
-            android:layout_marginLeft="15dp"
+            android:layout_height="50dp"
+            android:background="@drawable/iconmenu"
+            android:layout_marginLeft="90dp"
             android:onClick="showPopup"/>
 
     </LinearLayout>
@@ -149,9 +149,9 @@
                         android:id="@+id/linearProtectionBlack"
                         android:layout_width="5dp"
                         android:layout_height="15dp"
+                        android:layout_marginLeft="0dp"
                         android:background="@color/black"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="0dp"></LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
 
                 </LinearLayout>
 

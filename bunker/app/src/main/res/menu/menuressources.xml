@@ -10,4 +10,12 @@
         android:id="@+id/Accueil"
         android:title="Accueil"
         android:onClick="onMenuItemClick"/>
+    <item
+        android:id="@+id/Regles"
+        android:title="Règles"
+        android:onClick="onMenuItemClick"/>
+    <item
+        android:id="@+id/Survivants"
+        android:title="Survivants"
+        android:onClick="onMenuItemClick"/>
 </menu>

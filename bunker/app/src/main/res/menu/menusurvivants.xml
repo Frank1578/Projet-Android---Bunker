@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Activites"
+        android:onClick="onMenuItemClick"
+        android:title="Activités" />
+    <item
+        android:id="@+id/Accueil"
+        android:title="Accueil"
+        android:onClick="onMenuItemClick"/>
+    <item
+        android:id="@+id/Regles"
+        android:title="Règles"
+        android:onClick="onMenuItemClick"/>
+    <item
+        android:id="@+id/Ressources"
+        android:title="Ressources"
+        android:onClick="onMenuItemClick"/>
+
+</menu>

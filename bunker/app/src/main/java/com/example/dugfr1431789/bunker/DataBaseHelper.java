@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by DugFr1431789 on 2018-05-01.
@@ -22,6 +23,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String TABLES_BUNKERINFO = "tblInfos";
     public static final String nbreSurvivant = "nbreSurv";
+
+    public static final String TABLES_SURVIVANTS = "tblSurvivants";
+    public static final String nomSurvivant = "nomSurv";
+    public static final String metierSurvivant = "metierSurv";
+    public static final String forceSurvivant = "forceSurv";
+    public static final String intelSurvivant = "intelSurv";
 
     private SQLiteDatabase dbBunker;
     public static DataBaseHelper sInstance = null;
@@ -52,6 +59,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLES_BUNKERINFO + "("
                 + nbreSurvivant + " REAL);");
+
+        db.execSQL("CREATE TABLE " + TABLES_SURVIVANTS + "("
+                + nomSurvivant + " TEXT,"
+                + metierSurvivant + " TEXT,"
+                + forceSurvivant + " TEXT,"
+                + intelSurvivant + " TEXT);");
     }
 
     @Override
@@ -66,6 +79,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void insertInfo(String dataSurvivant){
         dbBunker.execSQL("INSERT INTO " + TABLES_BUNKERINFO + " VALUES(" + dataSurvivant + ");");
     }
+
+    public void insertSurvivant(String nom, String metier, String force, String intel){
+        dbBunker.execSQL("INSERT INTO " + TABLES_SURVIVANTS + " VALUES(" + "\'" + nom + "\'" + "," + "\'" + metier + "\'" + "," + "\'" + force + "\'" + "," + "\'" + intel + "\'" + ");");
+    }
+
 
 
     public int selectIdEau(){
@@ -144,5 +162,84 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
         }
         return info;
+    }
+
+    public String selectNomSurvivant(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + nomSurvivant + " FROM " + TABLES_SURVIVANTS, null);
+
+        String info = "";
+        if(cursor.moveToFirst()) {
+            do {
+                info = cursor.getString(cursor.getColumnIndex(nomSurvivant));
+            }while(cursor.moveToNext());
+        }
+        return info;
+    }
+
+    public String selectMetierSurvivant(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + metierSurvivant + " FROM " + TABLES_SURVIVANTS, null);
+
+        String info = "";
+        if(cursor.moveToFirst()) {
+            do {
+                info = cursor.getString(cursor.getColumnIndex(metierSurvivant));
+            }while(cursor.moveToNext());
+        }
+        return info;
+    }
+
+    public String selectForceSurvivant(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + forceSurvivant + " FROM " + TABLES_SURVIVANTS, null);
+
+        String info = "";
+        if(cursor.moveToFirst()) {
+            do {
+                info = cursor.getString(cursor.getColumnIndex(forceSurvivant));
+            }while(cursor.moveToNext());
+        }
+        return info;
+    }
+
+    public String selectIntelSurvivant(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + intelSurvivant + " FROM " + TABLES_SURVIVANTS, null);
+
+        String info = "";
+        if(cursor.moveToFirst()) {
+            do {
+                info = cursor.getString(cursor.getColumnIndex(intelSurvivant));
+            }while(cursor.moveToNext());
+        }
+        return info;
+    }
+
+    public List<UnSurvivant> selectSurvivants(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLES_SURVIVANTS, null);
+
+        List<UnSurvivant> listSurv= new ArrayList<>();
+        String name = "";
+        String job = "";
+        String force = "";
+        String intel = "";
+        if(cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            do {
+                name = cursor.getString(cursor.getColumnIndex(nomSurvivant));
+                job = cursor.getString(cursor.getColumnIndex(metierSurvivant));
+                force = cursor.getString(cursor.getColumnIndex(forceSurvivant));
+                intel = cursor.getString(cursor.getColumnIndex(intelSurvivant));
+
+                listSurv.add(new UnSurvivant(name, job, force, intel));
+            }while(cursor.moveToNext());
+        }
+        return listSurv;
+    }
+
+    public void deleteSurvivant(UnSurvivant survivant){
+        dbBunker.delete(TABLES_SURVIVANTS, nomSurvivant + " = '" + survivant.getNomS() + "' AND " + metierSurvivant + " = '" + survivant.getMetierS() + "' AND " + forceSurvivant + " = '" + survivant.getForceS() + "' AND " + intelSurvivant + " = '" + survivant.getIntelS() + "\'", null);
     }
 }
